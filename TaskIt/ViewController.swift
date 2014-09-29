@@ -21,6 +21,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tasks = getData()
         tableView.reloadData()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "showTaskDetail") {
+            let detailVC: TaskDetailViewController = segue.destinationViewController as TaskDetailViewController
+            let indexPath = self.tableView.indexPathForSelectedRow()
+            let task = tasks[indexPath!.row]
+            detailVC.detailTaskModel = task
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -44,7 +53,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // UITAbleViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // TODO
+        performSegueWithIdentifier("showTaskDetail", sender: self)
     }
 
 }

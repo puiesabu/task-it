@@ -58,11 +58,46 @@
                     <navigationItem key="navigationItem" id="nRV-R1-nQc"/>
                     <connections>
                         <outlet property="tableView" destination="VTa-M4-L9F" id="oyP-yc-qt7"/>
+                        <segue destination="ShC-Dx-AIK" kind="show" identifier="showTaskDetail" id="TO1-zb-vMH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="951" y="132"/>
+        </scene>
+        <!--Task Detail View Controller-->
+        <scene sceneID="Esl-mH-JpK">
+            <objects>
+                <viewController id="ShC-Dx-AIK" customClass="TaskDetailViewController" customModule="TaskIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GQ2-Lp-pkc"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Xm-9c-DsS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7G7-Zw-C03">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Task" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iXV-3o-vu4">
+                                <rect key="frame" x="20" y="132" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGs-2v-BnJ">
+                                <rect key="frame" x="20" y="89" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="taskField" destination="iXV-3o-vu4" id="82L-x3-dx1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S1w-cG-8oR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1646" y="132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="02I-cl-kbm">

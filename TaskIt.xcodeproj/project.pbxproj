@@ -16,6 +16,7 @@
 		8ADF9C7E19D9320F001112B0 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADF9C7D19D9320F001112B0 /* TaskCell.swift */; };
 		8ADF9C8019D93DAE001112B0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADF9C7F19D93DAE001112B0 /* Data.swift */; };
 		8ADF9C8219D944B5001112B0 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADF9C8119D944B5001112B0 /* TaskModel.swift */; };
+		8ADF9C8619D952FC001112B0 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADF9C8519D952FC001112B0 /* TaskDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		8ADF9C7D19D9320F001112B0 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		8ADF9C7F19D93DAE001112B0 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		8ADF9C8119D944B5001112B0 /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		8ADF9C8519D952FC001112B0 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				8AB5AB2F19D8EAD600CC5B78 /* Supporting Files */,
 				8ADF9C7F19D93DAE001112B0 /* Data.swift */,
 				8ADF9C8119D944B5001112B0 /* TaskModel.swift */,
+				8ADF9C8519D952FC001112B0 /* TaskDetailViewController.swift */,
 			);
 			path = TaskIt;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ADF9C8619D952FC001112B0 /* TaskDetailViewController.swift in Sources */,
 				8AB5AB3419D8EAD600CC5B78 /* ViewController.swift in Sources */,
 				8ADF9C7E19D9320F001112B0 /* TaskCell.swift in Sources */,
 				8ADF9C8219D944B5001112B0 /* TaskModel.swift in Sources */,
