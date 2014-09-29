@@ -10,5 +10,5 @@ import Foundation
 
 struct TaskModel {
     var task: String
-    var date: String
+    var date: NSDate
 }

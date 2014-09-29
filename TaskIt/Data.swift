@@ -11,9 +11,9 @@ import UIKit
 func getData() -> Array<TaskModel> {
 
     var data = [
-        TaskModel(task: "Study French", date: "1/10/2014"),
-        TaskModel(task: "Dinner with Alex", date: "3/10/2014"),
-        TaskModel(task: "Nine West Sale", date: "4/10/2014")
+        TaskModel(task: "Study French", date: Date.at(year: 2014, month: 10, day: 1)),
+        TaskModel(task: "Dinner with Alex", date: Date.at(year: 2014, month: 10, day: 3)),
+        TaskModel(task: "Nine West Sale", date: Date.at(year: 2014, month: 10, day: 4))
     ]
     
     return data

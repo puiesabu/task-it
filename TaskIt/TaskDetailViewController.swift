@@ -13,11 +13,13 @@ class TaskDetailViewController: UIViewController {
     var detailTaskModel: TaskModel!
 
     @IBOutlet weak var taskField: UITextField!
+    @IBOutlet weak var dueDatePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         taskField.text = detailTaskModel.task
+        dueDatePicker.date = detailTaskModel.date
     }
 
     override func didReceiveMemoryWarning() {

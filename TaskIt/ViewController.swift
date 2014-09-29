@@ -46,7 +46,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         var cell: TaskCell = tableView.dequeueReusableCellWithIdentifier("myCell") as TaskCell
         cell.taskLabel.text = task.task
-        cell.dateLabel.text = task.date
+        cell.dateLabel.text = Date.toString(date: task.date)
     
         return cell
     }
