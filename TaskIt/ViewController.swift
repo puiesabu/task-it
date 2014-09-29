@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tableView: UITableView!
     
-    var tasks: Array<Dictionary<String, String>> = []
+    var tasks: Array<TaskModel> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +33,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let task: Dictionary = tasks[indexPath.row]
+        let task: TaskModel = tasks[indexPath.row]
         
         var cell: TaskCell = tableView.dequeueReusableCellWithIdentifier("myCell") as TaskCell
-        cell.taskLabel.text = task["task"]
-        cell.dateLabel.text = task["date"]
+        cell.taskLabel.text = task.task
+        cell.dateLabel.text = task.date
     
         return cell
     }

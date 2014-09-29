@@ -15,6 +15,7 @@
 		8AB5AB4819D8EAD600CC5B78 /* TaskItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB5AB4719D8EAD600CC5B78 /* TaskItTests.swift */; };
 		8ADF9C7E19D9320F001112B0 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADF9C7D19D9320F001112B0 /* TaskCell.swift */; };
 		8ADF9C8019D93DAE001112B0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADF9C7F19D93DAE001112B0 /* Data.swift */; };
+		8ADF9C8219D944B5001112B0 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADF9C8119D944B5001112B0 /* TaskModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		8AB5AB4719D8EAD600CC5B78 /* TaskItTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItTests.swift; sourceTree = "<group>"; };
 		8ADF9C7D19D9320F001112B0 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		8ADF9C7F19D93DAE001112B0 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		8ADF9C8119D944B5001112B0 /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				8AB5AB3A19D8EAD600CC5B78 /* LaunchScreen.xib */,
 				8AB5AB2F19D8EAD600CC5B78 /* Supporting Files */,
 				8ADF9C7F19D93DAE001112B0 /* Data.swift */,
+				8ADF9C8119D944B5001112B0 /* TaskModel.swift */,
 			);
 			path = TaskIt;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			files = (
 				8AB5AB3419D8EAD600CC5B78 /* ViewController.swift in Sources */,
 				8ADF9C7E19D9320F001112B0 /* TaskCell.swift in Sources */,
+				8ADF9C8219D944B5001112B0 /* TaskModel.swift in Sources */,
 				8AB5AB3219D8EAD600CC5B78 /* AppDelegate.swift in Sources */,
 				8ADF9C8019D93DAE001112B0 /* Data.swift in Sources */,
 			);
