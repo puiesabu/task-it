@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tasks-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TaskIt" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,7 +55,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nRV-R1-nQc"/>
+                    <navigationItem key="navigationItem" title="Tasks" id="nRV-R1-nQc"/>
                     <connections>
                         <outlet property="tableView" destination="VTa-M4-L9F" id="oyP-yc-qt7"/>
                         <segue destination="ShC-Dx-AIK" kind="show" identifier="showTaskDetail" id="TO1-zb-vMH"/>
@@ -65,7 +65,7 @@
             </objects>
             <point key="canvasLocation" x="951" y="132"/>
         </scene>
-        <!--Task Detail View Controller-->
+        <!--Detail-->
         <scene sceneID="Esl-mH-JpK">
             <objects>
                 <viewController id="ShC-Dx-AIK" customClass="TaskDetailViewController" customModule="TaskIt" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,6 +103,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Detail" id="qAA-qY-EUr">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="4HN-UZ-IXQ">
+                            <connections>
+                                <action selector="cancelButtonDidPress:" destination="ShC-Dx-AIK" id="ivh-Ga-IO6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="wd6-92-4NF">
+                            <connections>
+                                <action selector="doneButtonDidPress:" destination="ShC-Dx-AIK" id="kXb-OZ-Jd9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dueDatePicker" destination="YyY-id-Wef" id="I7s-jR-CbK"/>
                         <outlet property="taskField" destination="iXV-3o-vu4" id="82L-x3-dx1"/>

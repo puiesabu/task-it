@@ -19,6 +19,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Do any additional setup after loading the view, typically from a nib.
         
         tasks = getData()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         tableView.reloadData()
     }
     
@@ -28,6 +31,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let indexPath = self.tableView.indexPathForSelectedRow()
             let task = tasks[indexPath!.row]
             detailVC.detailTaskModel = task
+            detailVC.mainVC = self
         }
     }
 

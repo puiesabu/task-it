@@ -10,6 +10,7 @@ import UIKit
 
 class TaskDetailViewController: UIViewController {
     
+    var mainVC: ViewController!
     var detailTaskModel: TaskModel!
 
     @IBOutlet weak var taskField: UITextField!
@@ -27,4 +28,16 @@ class TaskDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func cancelButtonDidPress(sender: UIBarButtonItem) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func doneButtonDidPress(sender: UIBarButtonItem) {
+        
+        var task = TaskModel(task: taskField.text, date: dueDatePicker.date)
+        
+        mainVC.tasks[mainVC.tableView.indexPathForSelectedRow()!.row] = task
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 }
