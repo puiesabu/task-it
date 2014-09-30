@@ -16,12 +16,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         tasks = getData()
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
         tableView.reloadData()
     }
     
@@ -32,9 +33,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let task = tasks[indexPath!.row]
             detailVC.detailTaskModel = task
             detailVC.mainVC = self
+        } else if (segue.identifier == "showTaskAdd") {
+            let addVC: TaskAddViewController = segue.destinationViewController as TaskAddViewController
+            addVC.mainVC = self
         }
     }
 
+    @IBAction func addButtonDidPress(sender: UIBarButtonItem) {
+        self.performSegueWithIdentifier("showTaskAdd", sender: self)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
