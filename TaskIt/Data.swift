@@ -8,13 +8,22 @@
 
 import UIKit
 
-func getData() -> Array<TaskModel> {
+func getIncomplemtedTasks() -> Array<TaskModel> {
 
-    var data = [
-        TaskModel(task: "Study French", date: Date.at(year: 2014, month: 10, day: 1)),
-        TaskModel(task: "Dinner with Alex", date: Date.at(year: 2014, month: 10, day: 3)),
-        TaskModel(task: "Nine West Sale", date: Date.at(year: 2014, month: 10, day: 4))
+    var tasks = [
+        TaskModel(task: "Study French", date: Date.at(year: 2014, month: 10, day: 1), completed: false),
+        TaskModel(task: "Dinner with Alex", date: Date.at(year: 2014, month: 10, day: 3), completed: false),
+        TaskModel(task: "Nine West Sale", date: Date.at(year: 2014, month: 10, day: 4), completed: false)
     ]
     
-    return data
+    return tasks
+}
+
+func getComplemtedTasks() -> Array<TaskModel> {
+    
+    var tasks = [
+        TaskModel(task: "Study TableView", date: Date.at(year: 2014, month: 9, day: 30), completed: true)
+    ]
+    
+    return tasks
 }

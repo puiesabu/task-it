@@ -12,18 +12,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tableView: UITableView!
     
-    var tasks: Array<TaskModel> = []
+    var allTasks: [[TaskModel]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tasks = getData()
+        allTasks = [getIncomplemtedTasks(), getComplemtedTasks()]
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        tasks = tasks.sorted {
+        allTasks[0] = allTasks[0].sorted {
             (task1: TaskModel, task2: TaskModel) -> Bool in
             // comparsion logic here
             return task1.date.timeIntervalSince1970 < task2.date.timeIntervalSince1970
@@ -36,7 +36,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if (segue.identifier == "showTaskDetail") {
             let detailVC: TaskDetailViewController = segue.destinationViewController as TaskDetailViewController
             let indexPath = self.tableView.indexPathForSelectedRow()
-            let task = tasks[indexPath!.row]
+            let task = allTasks[indexPath!.section][indexPath!.row]
             detailVC.detailTaskModel = task
             detailVC.mainVC = self
         } else if (segue.identifier == "showTaskAdd") {
@@ -55,12 +55,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     // UITableViewDataSource
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return allTasks.count
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
+        return allTasks[section].count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let task: TaskModel = tasks[indexPath.row]
+        let task: TaskModel = allTasks[indexPath.section][indexPath.row]
         
         var cell: TaskCell = tableView.dequeueReusableCellWithIdentifier("myCell") as TaskCell
         cell.taskLabel.text = task.task
@@ -72,6 +76,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // UITAbleViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier("showTaskDetail", sender: self)
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 25
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "TO DO"
+        } else {
+            return "Completed"
+        }
     }
 
 }

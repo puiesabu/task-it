@@ -11,4 +11,5 @@ import Foundation
 struct TaskModel {
     var task: String
     var date: NSDate
+    var completed: Bool
 }

@@ -33,10 +33,9 @@ class TaskDetailViewController: UIViewController {
     }
     
     @IBAction func doneButtonDidPress(sender: UIBarButtonItem) {
+        var task = TaskModel(task: taskField.text, date: dueDatePicker.date, completed: detailTaskModel.completed)
         
-        var task = TaskModel(task: taskField.text, date: dueDatePicker.date)
-        
-        mainVC.tasks[mainVC.tableView.indexPathForSelectedRow()!.row] = task
+        mainVC.allTasks[0][mainVC.tableView.indexPathForSelectedRow()!.row] = task
         
         self.navigationController?.popViewControllerAnimated(true)
     }
