@@ -23,6 +23,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        tasks = tasks.sorted {
+            (task1: TaskModel, task2: TaskModel) -> Bool in
+            // comparsion logic here
+            return task1.date.timeIntervalSince1970 < task2.date.timeIntervalSince1970
+        }
+        
         tableView.reloadData()
     }
     
