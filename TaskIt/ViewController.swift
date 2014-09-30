@@ -14,6 +14,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var allTasks: [[TaskModel]] = []
     
+    func reloadTasks() {
+        allTasks[0] = allTasks[0].sorted {
+            (task1: TaskModel, task2: TaskModel) -> Bool in
+            // comparsion logic here
+            return task1.date.timeIntervalSince1970 < task2.date.timeIntervalSince1970
+        }
+        
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,14 +32,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        allTasks[0] = allTasks[0].sorted {
-            (task1: TaskModel, task2: TaskModel) -> Bool in
-            // comparsion logic here
-            return task1.date.timeIntervalSince1970 < task2.date.timeIntervalSince1970
-        }
-        
-        tableView.reloadData()
+     
+        reloadTasks()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -88,6 +92,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             return "Completed"
         }
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+
+        var task = allTasks[indexPath.section][indexPath.row]
+        if indexPath.section == 0 {
+            task.completed = true
+            allTasks[1].append(task)
+        } else {
+            task.completed = false
+            allTasks[0].append(task)
+        }
+        
+        allTasks[indexPath.section].removeAtIndex(indexPath.row)
+        reloadTasks()
     }
 
 }
