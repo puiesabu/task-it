@@ -27,13 +27,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSFontAttributeName : UIFont(name: "AvenirNext-Heavy", size: 22),
+            NSForegroundColorAttributeName: UIColor.whiteColor()
+        ]
+        
         allTasks = [getIncomplemtedTasks(), getComplemtedTasks()]
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-     
+        
         reloadTasks()
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -70,9 +79,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let task: TaskModel = allTasks[indexPath.section][indexPath.row]
         
-        var cell: TaskCell = tableView.dequeueReusableCellWithIdentifier("myCell") as TaskCell
-        cell.taskLabel.text = task.task
-        cell.dateLabel.text = Date.toString(date: task.date)
+        var cell: TaskCell
+        if indexPath.section == 0 {
+            cell = tableView.dequeueReusableCellWithIdentifier("myCell") as TaskCell
+            cell.taskLabel.text = task.task
+            cell.dateLabel.text = Date.toString(date: task.date)
+        } else {
+            cell = tableView.dequeueReusableCellWithIdentifier("yourCell") as TaskCell
+            cell.taskLabel.text = task.task
+            cell.dateLabel.text = Date.toString(date: task.date)
+        }
     
         return cell
     }
